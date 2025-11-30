@@ -77,8 +77,8 @@ bash
 Копіювати код
 npm run build
 📸 Screenshots
-![Home Page Light](./public/screen-shot-light.png)
-![Home Page Dark](./public/screen-shot-dark.png)
+![Light Theme](public/screen-shot-light.png)
+![Dark Theme](public/screen-shot-dark.png)
 
 
 📌 Notes
