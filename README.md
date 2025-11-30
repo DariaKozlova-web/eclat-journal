@@ -77,8 +77,10 @@ bash
 Копіювати код
 npm run build
 📸 Screenshots
-![Light Theme](public/screen-shot-light.png)
-![Dark Theme](public/screen-shot-dark.png)
+
+![Light Theme](https://raw.githubusercontent.com/DariaKozlova-web/eclat-journal/main/public/screen-shot-light.png)
+![Dark Theme](https://raw.githubusercontent.com/DariaKozlova-web/eclat-journal/main/public/screen-shot-dark.png)
+
 
 
 📌 Notes
