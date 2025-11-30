@@ -1,0 +1,223 @@
+/* =========================================================
+   1. Google Fonts
+   ---------------------------------------------------------
+   Importing the two main fonts used across the project:
+   - Inter → base UI font
+   - Playfair Display → serif font for headings and brand identity
+   ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap");
+
+
+/* =========================================================
+   2. Tailwind Core
+   ---------------------------------------------------------
+   Includes all Tailwind preflight, utilities, and core rules.
+   ========================================================= */
+@import "tailwindcss";
+
+
+/* =========================================================
+   3. DaisyUI Plugin
+   ---------------------------------------------------------
+   Enables DaisyUI components and theme utilities.
+   ========================================================= */
+@plugin "daisyui";
+
+
+/* =========================================================
+   4. Global font assignment
+   ---------------------------------------------------------
+   - Default font: Inter
+   - Headings & serif utility class use Playfair Display
+   ========================================================= */
+:root {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+
+/* =========================================================
+   5. Custom DaisyUI Themes
+   ---------------------------------------------------------
+   Defining light and dark versions of Éclat Journal theme.
+   DaisyUI automatically switches theme based on:
+   <html data-theme="themeName">
+   ========================================================= */
+
+/* ---------------------------
+   ÉCLAT — LIGHT THEME
+   --------------------------- */
+@plugin "daisyui/theme" {
+  name: "eclatlight";
+  default: true;
+
+  --color-primary: #e65a7a;
+  --color-accent: #f08ca3;
+  --color-secondary: #e8dcd5;
+  --color-neutral: #3d3a38;
+  --color-base-100: #fcf9f7;
+  --color-info: #a6b3c8;
+  --color-success: #b4d3b2;
+  --color-warning: #eac8a5;
+  --color-error: #d8a5a5;
+}
+
+/* ---------------------------
+   ÉCLAT — DARK THEME
+   --------------------------- */
+@plugin "daisyui/theme" {
+  name: "eclatdark";
+  default: false;
+
+  --color-primary: #e65a7a;
+  --color-secondary: #7a6661;
+  --color-accent: #f08ca3;
+  --color-neutral: #e7e1dd;
+  --color-base-100: #1e1b1a;
+  --color-info: #8a9abc;
+  --color-success: #a2c79e;
+  --color-warning: #cfa88c;
+  --color-error: #b57f7f;
+}
+
+/* Small tweak for the logo when dark theme is active */
+html[data-theme="eclatdark"] img.logo {
+  filter: brightness(2) contrast(1.1);
+}
+
+
+/* Slight universal hover opacity */
+button:hover {
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   6. Global base styles
+   ---------------------------------------------------------
+   Applies background + text color based on current DaisyUI theme.
+   ========================================================= */
+body {
+  @apply bg-base-100 text-neutral;
+}
+
+
+/* =========================================================
+   7. Custom Tailwind Utility Classes
+   ========================================================= */
+@utility main-btn {
+  @apply rounded-full;
+}
+
+
+/* =========================================================
+   8. Animations (fade / scale)
+   ========================================================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn .25s ease-out;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-scaleIn {
+  animation: scaleIn .25s ease-out;
+}
+
+
+/* =========================================================
+   9. Global Button Styling Override
+   ---------------------------------------------------------
+   These override DaisyUI button defaults to match
+   the project's brand identity.
+   ========================================================= */
+
+/* Base button style */
+.btn {
+  @apply rounded-xl font-medium tracking-wide transition-all duration-200;
+}
+
+/* Accent (pink) button */
+.btn-accent {
+  @apply bg-primary text-white border-none;
+}
+
+.btn-accent:hover {
+  @apply opacity-90;
+}
+
+/* Outline button */
+.btn-outline {
+  @apply border-primary text-primary bg-transparent;
+}
+
+.btn-outline:hover {
+  @apply bg-primary/10;
+}
+
+/* Ghost button (minimal) */
+.btn-ghost {
+  @apply text-primary bg-transparent;
+}
+
+.btn-ghost:hover {
+  @apply bg-primary/15;
+}
+
+
+/* =========================================================
+   10. Logo Animation
+   ---------------------------------------------------------
+   Used in EmptyState component:
+   - fade-in
+   - soft pulsing
+   - floating up & down
+   Creates a premium, elegant appearance.
+   ========================================================= */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gentlePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes floating {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Logo animation composed of multiple layered effects */
+.logo-fade {
+  opacity: 0;
+
+  animation:
+    fadeIn 1.4s ease forwards,
+    gentlePulse 3.2s ease-in-out infinite 1.4s,
+    floating 4.6s ease-in-out infinite 1.4s;
+}
