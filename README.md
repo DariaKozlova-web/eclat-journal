@@ -3,6 +3,8 @@
 ÉCLAT Journal is a modern, elegant, single-page diary application built with **React**, **Vite**, **TailwindCSS**, and **DaisyUI**.
 The project focuses on clean UI/UX, smooth animations, theme customization, and a structured component-driven architecture.
 
+---
+
 ## ✨ Features
 
 - 📝 Create, edit, and delete diary entries
@@ -19,15 +21,16 @@ The project focuses on clean UI/UX, smooth animations, theme customization, and 
 
 - **React (Vite)**
 - **Tailwind CSS**
-- **DaisyUI** with custom themes
-- **LocalStorage** for theme persistence
-- **React Hooks** (custom hooks: `useEntries`, `useTheme`)
+- **DaisyUI with custom themes**
+- **LocalStorage for theme persistence**
+- **Custom React Hooks (`useEntries`, `useTheme`)**
 - **CSS animations & transitions**
 
 ---
 
 ## 📁 Project Structure
 
+```
 src/
 ├── components/
 │ ├── Header.jsx
@@ -49,51 +52,59 @@ src/
 ├── App.jsx
 ├── index.css
 └── main.jsx
-
-yaml
-Копіювати код
+```
 
 ---
 
 ## 🚀 How to Run Locally
 
-Clone the repository:
+### Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/eclat-journal.git
+git clone https://github.com/DariaKozlova-web/eclat-journal.git
+```
+### Install dependencies
+
+```bash
 cd eclat-journal
-Install dependencies:
-
-bash
-Копіювати код
 npm install
-Run the development server:
+```
+### Run development server
 
-bash
-Копіювати код
+```bash
 npm run dev
-🔧 Build for Production
-bash
-Копіювати код
-npm run build
-📸 Screenshots
+```
+### Build for production
 
+```bash
+npm run build
+```
+---
+
+## 📸 Screenshots
+
+### 🌞 Light Theme
 ![Light Theme](https://raw.githubusercontent.com/DariaKozlova-web/eclat-journal/main/public/screen-shot-light.png)
+
+### 🌙 Dark Theme
 ![Dark Theme](https://raw.githubusercontent.com/DariaKozlova-web/eclat-journal/main/public/screen-shot-dark.png)
 
 
+---
 
-📌 Notes
-This project was developed as part of a web development module and demonstrates:
+## 📌 Notes
 
-version control workflow with branches & pull requests
+This project demonstrates:
 
-clean React component architecture
+- Version control workflow with branches & pull requests
+- Clean React component architecture
+- UI theming with DaisyUI
+- State management with custom hooks
+- LocalStorage persistence  
 
-UI theming with DaisyUI
+---
 
-state management with custom hooks
+## 📄 License
 
-📄 License
-MIT License
-Feel free to use, modify, or extend the project.
+MIT License — feel free to use or modify the project.
+```
