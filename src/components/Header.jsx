@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "../hooks/useTheme";
+import logo from '../assets/images/logo.png';
 import { AddEntry } from "./AddEntry";
 import { ModalWindow } from "./ModalWindow";
 
@@ -24,7 +25,7 @@ export const Header = ({ onAddEntry }) => {
         <a className="flex items-center gap-3">
           <img
             className="logo w-20 h-auto"
-            src="/logo.png"
+            src={logo}
             alt="Éclat Journal"
           />
           <span className="hidden sm:inline text-2xl font-serif tracking-wide">

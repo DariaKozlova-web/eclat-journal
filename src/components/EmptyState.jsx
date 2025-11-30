@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from '../assets/images/logo.png';
 import { AddEntry } from "./AddEntry";
 import { ModalWindow } from "./ModalWindow";
 
@@ -9,7 +10,7 @@ export const EmptyState = ({ onAddEntry }) => {
     <>
       <div className="flex flex-col items-center justify-center py-20 text-center">
         {/* Logo with a fade-in animation shown when there are no entries */}
-        <img src="/logo.png" alt="Éclat Logo" className="logo-fade w-50 mb-6" />
+        <img src={logo} alt="Éclat Logo" className="logo-fade w-50 mb-6" />
         {/* Main message encouraging the user to create their first journal entry */}
         <h3 className="font-serif text-2xl text-neutral font-semibold">
           Your journal is waiting

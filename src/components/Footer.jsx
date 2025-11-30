@@ -1,3 +1,5 @@
+import logo from '../assets/images/logo.png';
+
 export const Footer = () => {
   return (
     <footer className="mt-20 border-t border-base-300">
@@ -5,7 +7,7 @@ export const Footer = () => {
 
         {/* Logo */}
         <img
-          src="/logo.png"
+          src={logo}
           alt="Éclat Journal"
           className="w-12 opacity-90 mb-3"
         />
