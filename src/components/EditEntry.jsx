@@ -7,23 +7,30 @@ export const EditEntry = ({ initialData, onSubmitEdit }) => {
   console.log(initialData);
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-serif mb-4">Add New Entry</h2>
+      <h2 className="text-2xl font-serif mb-4">Edit Entry</h2>
 
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          // Load all existing entries from localStorage
+          // Load all existing entries from localStorage.
+          // This returns an array of previously saved entries.
           const entries = JSON.parse(localStorage.getItem("entries"));
-          // Check if another entry already uses this date
+          // Check if another entry already exists with the same date.
+          // We compare the date of the entry currently being edited with all stored entries.
           const isDateExist = entries.find(
             (item) => item.date === formData.date
           );
-          if (isDateExist) {
+
+          // If a different entry (i.e., with a different ID) already uses this date,
+          // we prevent saving and show a warning message.
+          // This ensures that two entries cannot share the same date.
+          if (isDateExist && isDateExist.id !== initialData.id) {
             window.alert(
               "Entry for this date already exists. Choose another date."
             );
           } else {
-            // Return updated data to the parent component
+            // If no duplicate date is found (or if it is the same entry being edited),
+            // we proceed and return the updated data to the parent component.
             onSubmitEdit(formData);
           }
         }}
